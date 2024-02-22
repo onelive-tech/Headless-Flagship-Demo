@@ -24,7 +24,7 @@ function HeroVideo() {
                         <div className="mt-8 flex flex-wrap justify-start gap-4">
                             <a
                                 className="block rounded-full border border-pink-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-white hover:text-pink-600 focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-                                href="#"
+                                href="#" 
                             >
                                 Get Started
                             </a>
