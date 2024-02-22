@@ -33,9 +33,10 @@ export default function Homepage() {
       <HeroVideo />
       <div className="container mx-auto">
         <RecommendedProducts products={data.recommendedProducts} />
-        <Promotion />
+       
         {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       </div>
+      <Promotion />
     </div>
   );
 }
