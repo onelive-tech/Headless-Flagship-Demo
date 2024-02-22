@@ -3,6 +3,7 @@ import {Await, useLoaderData, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
 import HeroVideo from '~/components/HeroVideo';
+import Promotion from '~/components/Promotion';
 
 
 /**
@@ -31,9 +32,11 @@ export default function Homepage() {
     <div className="home">
       <HeroVideo />
       <div className="container mx-auto">
-      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
-      <RecommendedProducts products={data.recommendedProducts} />
+        <RecommendedProducts products={data.recommendedProducts} />
+       
+        {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       </div>
+      <Promotion />
     </div>
   );
 }
