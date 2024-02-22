@@ -1,6 +1,7 @@
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
+import Logo from '../../public/onelive-logo.webp'
 
 /**
  * @param {HeaderProps}
@@ -10,7 +11,22 @@ export function Header({header, isLoggedIn, cart}) {
   return (
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        <strong>
+          <img
+            className='max-h-12'
+            src={Logo}
+            alt={shop.name}
+            // width="20%"
+            height="auto"
+            style={{
+              paddingLeft: '0',
+              paddingTop: '10px',
+              paddingBottom: '10px',
+              objectPosition: 'center',
+            }}
+          />          
+          
+        </strong>
       </NavLink>
       <HeaderMenu
         menu={menu}
@@ -21,7 +37,6 @@ export function Header({header, isLoggedIn, cart}) {
     </header>
   );
 }
-
 /**
  * @param {{
  *   menu: HeaderProps['header']['menu'];
