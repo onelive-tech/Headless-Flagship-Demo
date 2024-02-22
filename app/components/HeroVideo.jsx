@@ -11,7 +11,7 @@ function HeroVideo() {
                 </video>
                 <div className="absolute inset-0 text-white bg-black bg-opacity-50 p-8">
 
-                    <div className='absolute bottom-1 mb-2.5'>
+                    <div className='absolute bottom-3 mb-2.5'>
                         <h2 className="text-3xl font-bold sm:text-5xl">
                             Dare to go headless!
                         </h2>
@@ -23,14 +23,14 @@ function HeroVideo() {
 
                         <div className="mt-8 flex flex-wrap justify-start gap-4">
                             <a
-                                className="block rounded-full border border-pink-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                                className="block rounded-full border border-pink-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-white hover:text-pink-600 focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                                 href="#"
                             >
                                 Get Started
                             </a>
 
                             <a
-                                className="block rounded-full border border-pink-600 bg-white px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                                className="block rounded-full border border-pink-600 bg-white px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
                                 href="#"
                             >
                                 Learn More

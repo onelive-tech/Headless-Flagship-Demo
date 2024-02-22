@@ -61,6 +61,7 @@ function FeaturedCollection({collection}) {
   );
 }
 
+
 /**
  * @param {{
  *   products: Promise<RecommendedProductsQuery>;
