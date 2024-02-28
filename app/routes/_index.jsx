@@ -5,6 +5,8 @@ import {Image, Money} from '@shopify/hydrogen';
 import HeroVideo from '~/components/HeroVideo';
 import Promotion from '~/components/Promotion';
 import FeaturedProduct from '~/components/FeaturedProduct';
+import CategorySection from '~/components/CategorySection';
+import FeaturedSection from '~/components/FeaturedSection';
 
 /**
  * @type {MetaFunction}
@@ -36,6 +38,10 @@ export default function Homepage() {
        
         {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       </div>
+
+      <CategorySection />
+      <FeaturedSection />
+      
       <Promotion />
       <FeaturedProduct />
     </div>
