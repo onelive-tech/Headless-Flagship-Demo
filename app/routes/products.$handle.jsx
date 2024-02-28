@@ -1,6 +1,8 @@
 import {Suspense} from 'react';
 import {defer, redirect} from '@shopify/remix-oxygen';
 import {Await, Link, useLoaderData} from '@remix-run/react';
+import RecommendProducts from '~/components/RecommendProducts';
+import ProductReviews from '~/components/ProductReviews';
 
 import {
   Image,
@@ -107,13 +109,22 @@ export default function Product() {
   const {product, variants} = useLoaderData();
   const {selectedVariant} = product;
   return (
-    <div className="product">
+    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className='product lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8'>
       <ProductImage image={selectedVariant?.image} />
       <ProductMain
         selectedVariant={selectedVariant}
         product={product}
         variants={variants}
       />
+      </div>
+      <div className="container mx-auto">
+        <ProductReviews />
+      </div>  
+      <div className="container mx-auto">
+        <RecommendProducts />
+      </div>
+  
     </div>
   );
 }
@@ -126,7 +137,7 @@ function ProductImage({image}) {
     return <div className="product-image" />;
   }
   return (
-    <div className="product-image">
+    <div className="product-image mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
       <Image
         alt={image.altText || 'Product Image'}
         aspectRatio="1/1"
@@ -148,8 +159,8 @@ function ProductImage({image}) {
 function ProductMain({selectedVariant, product, variants}) {
   const {title, descriptionHtml} = product;
   return (
-    <div className="product-main">
-      <h1>{title}</h1>
+    <div className="product-main mt-8 lg:col-span-5">
+      <h1 className='text-3xl font-bold tracking-tight text-gray-900'>{title}</h1>
       <ProductPrice selectedVariant={selectedVariant} />
       <br />
       <Suspense
@@ -182,7 +193,9 @@ function ProductMain({selectedVariant, product, variants}) {
       <br />
       <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
       <br />
+
     </div>
+
   );
 }
 
@@ -263,16 +276,15 @@ function ProductOptions({option}) {
         {option.values.map(({value, isAvailable, isActive, to}) => {
           return (
             <Link
-              className="product-options-item"
+            className={
+              "product-options-item  flex items-center justify-center rounded-md border py-2 px-3 text-sm font-medium uppercase cursor-pointer focus:outline-none undefined bg-white border-black bg-white text-black hover:bg-white hover:no-underline hover:border-black hover:text-black " +
+              (isActive ? 'active ' : '')
+            }
               key={option.name + value}
               prefetch="intent"
               preventScrollReset
               replace
               to={to}
-              style={{
-                border: isActive ? '1px solid black' : '1px solid transparent',
-                opacity: isAvailable ? 1 : 0.3,
-              }}
             >
               {value}
             </Link>
@@ -304,6 +316,7 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
             value={JSON.stringify(analytics)}
           />
           <button
+            className="btn-default overflow-hidden relative w-80 bg-black text-white py-2 px-4 rounded-xl font-bold uppercase transition-all duration-100 -- hover:shadow-md border border-black hover:bg-gradient-to-t hover:from-gray-900 before:to-grey-900 hover:-translate-y-[3px]"
             type="submit"
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
@@ -314,6 +327,49 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
       )}
     </CartForm>
   );
+}
+/**
+ * @param {{
+*   products: Promise<RecommendedProductsQuery>;
+* }}
+*/
+function RecommendedProducts({products}) {
+ return (
+   <div className="recommended-products">
+     <h2 className=' py-6 text-center'>Recommended Products</h2>
+     <Suspense fallback={<div>Loading...</div>}>
+       <Await resolve={products}>
+         {({products}) => (
+           <div className="recommended-products-grid mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+             {products.nodes.map((product) => (
+               <Link
+                 key={product.id}
+                 className="recommended-product group relative"
+                 to={`/products/${product.handle}`}
+               >
+                 <div className="w-full rounded-md bg-gray-200 group-hover:opacity-75">
+                   <Image
+                     data={product.images.nodes[0]}
+                     aspectRatio="1/1"
+                     sizes="(min-width: 45em) 20vw, 50vw"
+                   />
+                 </div>
+
+                 <div className="mt-4 flex justify-between">
+                 <h4 className="text-sm text-gray-700">{product.title}</h4>
+                 <small className="text-sm font-medium text-gray-900">
+                   <Money data={product.priceRange.minVariantPrice} />
+                 </small>
+                 </div>
+               </Link>
+             ))}
+           </div>
+         )}
+       </Await>
+     </Suspense>
+     <br />
+   </div>
+ );
 }
 
 const PRODUCT_VARIANT_FRAGMENT = `#graphql

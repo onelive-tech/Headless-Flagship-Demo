@@ -12,6 +12,8 @@
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "@remix-run/react": "^2.5.1",
     "@remix-run/server-runtime": "^2.5.1",
     "@shopify/cli": "3.52.0",
@@ -41,6 +43,7 @@
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.2.0",
     "prettier": "^2.8.4",
+    "sass": "^1.71.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.2.2"
   },
