@@ -9,8 +9,7 @@ import TextTicker from '~/components/TextTicker';
  */
 export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
-  return (
-    
+  return (    
     <header className="header shadow px-0 h-auto block ">
         <div className='overflow-hidden'>
         <TextTicker />
