@@ -17,8 +17,7 @@ function HeroVideo() {
                         </h2>
 
                         <p className="mt-4 max-w-xl sm:text-xl/relaxed">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-                            numquam ea!
+                            Enter the realm of limitless digital possibilities with headless websites. Embrace the future of web development where content reigns supreme, and design knows no boundaries. 
                         </p>
 
                         <div className="mt-8 flex flex-wrap justify-start gap-4">

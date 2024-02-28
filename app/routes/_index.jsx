@@ -3,7 +3,10 @@ import {Await, useLoaderData, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
 import HeroVideo from '~/components/HeroVideo';
-
+import Promotion from '~/components/Promotion';
+import FeaturedProduct from '~/components/FeaturedProduct';
+import CategorySection from '~/components/CategorySection';
+import FeaturedSection from '~/components/FeaturedSection';
 
 /**
  * @type {MetaFunction}
@@ -31,9 +34,16 @@ export default function Homepage() {
     <div className="home">
       <HeroVideo />
       <div className="container mx-auto">
-      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
-      <RecommendedProducts products={data.recommendedProducts} />
+        <RecommendedProducts products={data.recommendedProducts} />
+       
+        {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       </div>
+
+      <CategorySection />
+      <FeaturedSection />
+      
+      <Promotion />
+      <FeaturedProduct />
     </div>
   );
 }
@@ -73,22 +83,27 @@ function RecommendedProducts({products}) {
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({products}) => (
-            <div className="recommended-products-grid">
+            <div className="recommended-products-grid mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {products.nodes.map((product) => (
                 <Link
                   key={product.id}
-                  className="recommended-product"
+                  className="recommended-product group relative"
                   to={`/products/${product.handle}`}
                 >
-                  <Image
-                    data={product.images.nodes[0]}
-                    aspectRatio="1/1"
-                    sizes="(min-width: 45em) 20vw, 50vw"
-                  />
-                  <h4>{product.title}</h4>
-                  <small>
+                  <div className="w-full rounded-md bg-gray-200 group-hover:opacity-75">
+                    <Image
+                      data={product.images.nodes[0]}
+                      aspectRatio="1/1"
+                      sizes="(min-width: 45em) 20vw, 50vw"
+                    />
+                  </div>
+
+                  <div className="mt-4 flex justify-between">
+                  <h4 className="text-sm text-gray-700">{product.title}</h4>
+                  <small className="text-sm font-medium text-gray-900">
                     <Money data={product.priceRange.minVariantPrice} />
                   </small>
+                  </div>
                 </Link>
               ))}
             </div>

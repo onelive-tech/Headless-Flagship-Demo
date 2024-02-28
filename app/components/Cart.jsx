@@ -122,8 +122,8 @@ function CartCheckoutActions({checkoutUrl}) {
 
   return (
     <div>
-      <a href={checkoutUrl} target="_self">
-        <p>Continue to Checkout &rarr;</p>
+      <a href={checkoutUrl} className='btn-default overflow-hidden relative w-full bg-black text-white my-6 py-2 px-4 rounded-xl font-bold uppercase transition-all duration-100 -- hover:shadow-md border border-black hover:bg-gradient-to-t hover:from-gray-900 before:to-grey-900 hover:no-underline  hover:-translate-y-[3px]' target="_self">
+        Continue to Checkout
       </a>
       <br />
     </div>
@@ -139,12 +139,12 @@ function CartCheckoutActions({checkoutUrl}) {
  */
 export function CartSummary({cost, layout, children = null}) {
   const className =
-    layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
+    layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside my-6';
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
       <h4>Totals</h4>
-      <dl className="cart-subtotal">
+      <dl className="cart-subtotal mb-3">
         <dt>Subtotal</dt>
         <dd>
           {cost?.subtotalAmount?.amount ? (
@@ -296,10 +296,10 @@ function CartDiscounts({discountCodes}) {
 
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
-        <div>
-          <input type="text" name="discountCode" placeholder="Discount code" />
+        <div className='relative flex items-center mb-4'>
+          <input className='peer relative h-10 w-full rounded-md bg-gray-50 pl-4 pr-20 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg' type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
-          <button type="submit">Apply</button>
+          <button className='absolute right-0 h-10 w-16 rounded-r-md bg-black text-xs font-semibold text-white transition-all duration-200 ease-in-out group-focus-within:bg-blue-400 group-focus-within:hover:bg-white' type="submit">Apply</button>
         </div>
       </UpdateDiscountForm>
     </div>
