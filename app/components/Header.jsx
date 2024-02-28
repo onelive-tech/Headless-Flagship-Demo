@@ -12,7 +12,9 @@ export function Header({header, isLoggedIn, cart}) {
   return (
     
     <header className="header shadow px-0 h-auto block ">
+        <div className='overflow-hidden'>
         <TextTicker />
+        </div>
         <div className='inner-header items-center px-2 flex'>
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
           <strong>
