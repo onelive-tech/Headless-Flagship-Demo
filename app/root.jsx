@@ -154,6 +154,7 @@ export function ErrorBoundary() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        
       </head>
       <body>
         <Layout {...rootData}>
