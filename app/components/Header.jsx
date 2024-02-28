@@ -9,7 +9,7 @@ import Logo from '../../public/onelive-logo.webp'
 export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
-    <header className="header">
+    <header className="header bg-white bg-opacity-80 backdrop-blur-md backdrop-filter">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <strong>
           <img

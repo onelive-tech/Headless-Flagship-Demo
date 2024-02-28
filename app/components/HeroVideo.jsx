@@ -5,11 +5,11 @@ function HeroVideo() {
     return (
         <div>
             <div className="relative">
-                <video className="w-full h-65vh object-cover" controls autoPlay loop muted>
+                <video className="w-full h-65xvh object-cover" controls autoPlay loop muted>
                     <source src={olvideo} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 text-white bg-black bg-opacity-50 p-8">
+                {/* <div className="absolute inset-0 text-white bg-black bg-opacity-50 p-8">
 
                     <div className='absolute bottom-3 mb-2.5'>
                         <h2 className="text-3xl font-bold sm:text-5xl">
@@ -37,7 +37,7 @@ function HeroVideo() {
                         </div>                        
                     </div>
                     
-                </div>
+                </div> */}
             </div>
         </div>
     );
