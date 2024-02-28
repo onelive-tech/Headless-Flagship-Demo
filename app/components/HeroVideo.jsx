@@ -22,14 +22,14 @@ function HeroVideo() {
 
                         <div className="mt-8 flex flex-wrap justify-start gap-4">
                             <a
-                                className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 block rounded-full border border-pink-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-white hover:text-pink-600 focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                                className="block transition-all rounded-full bg-pink-600 bg-gradient-to-r from-red-600 to-pink-600  px-12 py-3 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-r hover:from-white hover:to-white hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                                 href="#" 
                             >
                                 Get Started
                             </a>
 
                             <a
-                                className="block rounded-full border border-pink-600 bg-white px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                                className="block transition-all rounded-full border border-white bg-wxhite px-12 py-3 text-sm font-medium text-white hover:bg-pink-600 hover:text-white focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
                                 href="#"
                             >
                                 Learn More
