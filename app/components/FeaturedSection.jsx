@@ -25,7 +25,7 @@ function FeaturedSection() {
                                 </p>
                                 <a
                                     href="#"
-                                    className="mt-8 block w-full rounded-lg border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+                                    className="mt-8 block w-full transition-all rounded-full bg-pink-600 bg-gradient-to-r from-red-600 to-pink-600  px-12 py-3 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-r hover:from-white hover:to-white hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                                 >
                                     Start Customizing
                                 </a>

@@ -3,6 +3,7 @@ import promoImg2 from "../../public/promotion2.webp"
 import promoImg3 from "../../public/promotion3.webp"
 import promoImg4 from "../../public/promotion4.webp"
 import promoImg5 from "../../public/promotion5.webp"
+import promoImg6 from "../../public/cateogry_bg_new.png"
 
 export default function Promotion() {
     return (
@@ -73,7 +74,7 @@ export default function Promotion() {
                                         <div className="mt-6 flex-shrink-0 sm:mt-0">
                                             <img
                                                 className="h-64 w-64 rounded-lg object-cover  md:h-72 md:w-72"
-                                                src={promoImg1}
+                                                src={promoImg6}
                                                 alt=""
                                             />
                                         </div>
