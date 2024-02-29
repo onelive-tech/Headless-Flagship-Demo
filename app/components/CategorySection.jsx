@@ -42,10 +42,10 @@ function CategorySection() {
                 <h2 id="category-heading" className="text-2xl font-bold tracking-tight text-gray-900">
                     Shop by Category
                 </h2>
-                <a href="#" className="hidden text-sm font-semibold text-pink-600 hover:text-red-500 sm:block">
+                {/* <a href="#" className="hidden text-sm font-semibold text-pink-600 hover:text-red-500 sm:block">
                     Browse all categories
                     <span aria-hidden="true"> &rarr;</span>
-                </a>
+                </a> */}
             </div>
 
             <div className="mt-4 flow-root">

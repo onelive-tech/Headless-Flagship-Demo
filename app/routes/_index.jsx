@@ -33,17 +33,21 @@ export default function Homepage() {
   return (
     <div className="home">
       <HeroVideo />
-      <div className="container mx-auto">
-        <RecommendedProducts products={data.recommendedProducts} />
-       
-        {/* <FeaturedCollection collection={data.featuredCollection} /> */}
-      </div>
 
       <CategorySection />
+      {/* Jersey Customizer */}
       <FeaturedSection />
-      
-      <Promotion />
+
+      <div className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
+        <RecommendedProducts products={data.recommendedProducts} />
+      </div>
+        {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+
       <FeaturedProduct />
+      
+
+      <Promotion />
+      
     </div>
   );
 }
@@ -79,7 +83,7 @@ function FeaturedCollection({collection}) {
 function RecommendedProducts({products}) {
   return (
     <div className="recommended-products">
-      <h2 className=' py-6 text-center'>Recommended Products</h2>
+      <h2 className='text-3xl py-0 text-left'>Recommended Products</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({products}) => (
