@@ -12,7 +12,7 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
 } from '@remix-run/react';
-import favicon from '../public/favicon.svg';
+import favicon from '../public/OL-favicon-round-gradient-1.webp'
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import tailwind from './styles/tailwind.css';

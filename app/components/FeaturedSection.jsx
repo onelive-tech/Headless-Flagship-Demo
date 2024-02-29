@@ -24,7 +24,8 @@ function FeaturedSection() {
                                     Show off your team pride in your own style with customizable jerseys! Personalize your favorite team's jersey with your name, number to express your unique personality.
                                 </p>
                                 <a
-                                    href="#"
+                                    href="https://onelive-flagship.myshopify.com/products/custom-name-jersey"
+                                    target="_blank"
                                     className="mt-8 block w-full transition-all rounded-full bg-pink-600 bg-gradient-to-r from-red-600 to-pink-600  px-12 py-3 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-r hover:from-white hover:to-white hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                                 >
                                     Start Customizing
