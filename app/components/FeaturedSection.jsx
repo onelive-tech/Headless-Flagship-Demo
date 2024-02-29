@@ -15,7 +15,7 @@ function FeaturedSection() {
                         className="h-full w-full object-cover object-center"
                     />
                     <div className="absolute inset-0 flex justify-left items-center">
-                        <div className="px-6 py-4 sm:px-12 sm:py-40 lg:px-16 max-w-xl">
+                        <div className="px-6 py-4 sm:px-12 sm:py-40 lg:px-16 max-w-md">
                             <div className="relative mx-auto max-w-full flex flex-col items-center text-center">
                                 <h2 id="social-impact-heading" className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                     <span className="block sm:inline">CUSTOMIZE YOUR FAVORITE TEAM'S JERSEY.</span>
@@ -25,7 +25,7 @@ function FeaturedSection() {
                                 </p>
                                 <a
                                     href="#"
-                                    className="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+                                    className="mt-8 block w-full transition-all rounded-full bg-pink-600 bg-gradient-to-r from-red-600 to-pink-600  px-12 py-3 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-r hover:from-white hover:to-white hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                                 >
                                     Start Customizing
                                 </a>
