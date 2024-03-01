@@ -19,7 +19,7 @@ export default function Promotion() {
                                     Up to 50% off.
                                 </h2>
                                 <div className="mt-6 text-base">
-                                    <a href="#" className="font-semibold text-white">
+                                    <a href="/collections/all" className="font-semibold text-white">
                                         Shop the sale
                                         <span aria-hidden="true"> &rarr;</span>
                                     </a>

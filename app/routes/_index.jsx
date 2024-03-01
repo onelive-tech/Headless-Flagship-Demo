@@ -43,7 +43,7 @@ export default function Homepage() {
       </div>
         {/* <FeaturedCollection collection={data.featuredCollection} /> */}
 
-      <FeaturedProduct />
+      {/* <FeaturedProduct /> */}
       
 
       <Promotion />
