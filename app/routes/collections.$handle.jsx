@@ -98,32 +98,34 @@ function ProductItem({product, loading}) {
   const variant = product.variants.nodes[0];
   const variantUrl = useVariantUrl(product.handle, variant.selectedOptions);
   return (
-    <div className="recommended-products-grid mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      <Link
-        className="product-item "
-        key={product.id}
-        prefetch="intent"
-        to={variantUrl}
-      >
-        {product.featuredImage && (
-          <div className="w-full rounded-md bg-gray-200 group-hover:opacity-75">
-          <Image
-            alt={product.featuredImage.altText || product.title}
-            aspectRatio="1/1"
-            data={product.featuredImage}
-            loading={loading}
-            sizes="(min-width: 45em) 400px, 100vw"
-          />
+
+      <div className="recommended-products-grid flex">
+        <Link
+          className="product-item  p-2 group relative"
+          key={product.id}
+          prefetch="intent"
+          to={variantUrl}
+        >
+          {product.featuredImage && (
+            <div className="w-full rounded-md bg-gray-200 group-hover:opacity-75">
+            <Image
+              alt={product.featuredImage.altText || product.title}
+              aspectRatio="1/1"
+              data={product.featuredImage}
+              loading={loading}
+              sizes="(min-width: 45em) 400px, 100vw"
+            />
+            </div>
+          )}
+          <div className="mt-4 flex justify-between">
+            <h4 className="text-sm text-gray-700">{product.title}</h4>
+            <small className="text-sm font-medium text-gray-900">
+              <Money data={product.priceRange.minVariantPrice} />
+            </small>
           </div>
-        )}
-        <div className="mt-4 flex justify-between">
-          <h4 className="text-sm text-gray-700">{product.title}</h4>
-          <small className="text-sm font-medium text-gray-900">
-            <Money data={product.priceRange.minVariantPrice} />
-          </small>
-        </div>
-      </Link>
-    </div>
+        </Link>
+      </div>
+
   );
 }
 
