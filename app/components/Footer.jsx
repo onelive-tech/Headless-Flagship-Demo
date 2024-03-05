@@ -38,7 +38,7 @@ export default function FooterLayout() {
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                <a key={item.name} href={item.href} className="text-white hover:text-gray-400">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
@@ -48,7 +48,19 @@ export default function FooterLayout() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+              <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+              <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
@@ -59,24 +71,12 @@ export default function FooterLayout() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+              <h3 className="text-sm font-semibold leading-6 text-white">Specialty Services</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
+                  {navigation.services.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.name}
@@ -207,28 +207,31 @@ function activeLinkStyle({isActive, isPending}) {
 
 const navigation = {
   solutions: [
-    { name: 'Marketing?', href: '#' },
-    { name: 'Analytics?', href: '#' },
-    { name: 'Commerce?', href: '#' },
-    { name: 'Insights?', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing?', href: '#' },
-    { name: 'Documentation?', href: '#' },
-    { name: 'Guides?', href: '#' },
-    { name: 'API Status?', href: '#' },
+    { name: 'Ecommerce Solutions', href: 'https://www.onelive.com/ecommerce' },
+    { name: 'Multi-Store Ecommerce', href: 'https://www.onelive.com/ecommerce/multi-store-ecommerce' },
+    { name: 'Fulfillment Services', href: 'https://www.onelive.com/fulfillment-services' },
+    { name: 'Ecommerce Website Development', href: 'https://www.onelive.com/ecommerce/website-development' },
+    { name: 'Shopify Partner', href: 'https://www.onelive.com/shopify-partner' },
   ],
   company: [
-    { name: 'About', href: 'https://www.onelive.com/about' },
     { name: 'Blog', href: '/blogs/news' },
-    { name: 'Jobs?', href: '#' },
-    { name: 'Press?', href: '#' },
-    { name: 'Partners', href: 'https://www.onelive.com/shopify-partner' },
+    { name: 'About', href: 'https://www.onelive.com/about' },
+    { name: 'Resource Center', href: 'https://www.onelive.com/shopify-partner' },
+    { name: 'Technology Partners', href: 'https://www.onelive.com/technology-partners' },
+    { name: 'Support', href: 'https://www.onelive.com/support' },
+    { name: 'Contact', href: 'https://www.onelive.com/contact' },
+  ],
+  services: [
+    { name: 'VIP Services', href: 'https://www.onelive.com/services/vip-services' },
+    { name: 'Fan Club Platform', href: 'https://www.onelive.com/services/fan-club' },
+    { name: 'Event Ticketing Software', href: 'https://www.onelive.com/services/event-ticketing-software' },
   ],
   legal: [
-    { name: 'Claim?', href: '#' },
+    { name: 'Accessibility', href: 'https://www.onelive.com/accessibility-statement' },
     { name: 'Privacy', href: 'https://www.onelive.com/privacy' },
     { name: 'Terms', href: 'https://www.onelive.com/terms' },
+    { name: 'Cookies', href: 'https://www.onelive.com/cookies' },
+
   ],
   social: [
     {
