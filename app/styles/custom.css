@@ -133,10 +133,12 @@ body {
   bottom: 0;
   width: 100%;
   overflow: hidden;
-
-
   padding-left: 100%;
   box-sizing: content-box;
+  background: rgb(255,0,194);
+  background: -moz-linear-gradient(90deg, rgba(255,0,194,1) 0%, rgba(255,0,0,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(255,0,194,1) 0%, rgba(255,0,0,1) 100%);
+  background: linear-gradient(90deg, rgba(255,0,194,1) 0%, rgba(255,0,0,1) 100%);
 }
 .ticker {
   display: inline-block;
