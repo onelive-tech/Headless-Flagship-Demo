@@ -89,7 +89,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             : item.url;
         return (
           <NavLink
-            className="nav-item inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            className="nav-item inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium "
             end
             key={item.id}
             onClick={closeAside}
