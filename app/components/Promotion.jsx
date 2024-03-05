@@ -8,7 +8,7 @@ import promoImg6 from "../../public/cateogry_bg_new.png"
 export default function Promotion() {
     return (
         <div className="bg-white">
-            <div className="overflow-hidden pt-32 sm:pt-14">
+            <div className="overflow-hidden pt-32">
                 <div className="bg-gradient-to-r from-red-600 to-pink-600">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="relative pb-16 pt-48 sm:pb-24">
