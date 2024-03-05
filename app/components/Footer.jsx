@@ -25,22 +25,18 @@ export default function FooterLayout() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 text-center	pt-16 sm:pt-24 lg:text-left lg:px-8 lg:pt-32">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="flex items-center justify-center space-y-8 lg:justify-start pb-2">
-          <img
+          <div className="space-y-8">
+            <img
               className="h-7"
               src={Logo}
-              alt="Onelive Logo"
+              alt="Company name"
             />
-
-
-          </div>
-          <div className="justify-center space-y-8">
             <p className="text-sm leading-6 text-gray-300">
               The end-to-end ecommerce partner for DTC brands.
             </p>
-            <div className="flex mx-auto lg:mx-0 space-x-6">
+            <div className="flex space-x-6">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
                   <span className="sr-only">{item.name}</span>
