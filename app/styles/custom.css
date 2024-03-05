@@ -75,6 +75,19 @@ body {
   color: #fff;
 }
 
+.btn {
+  background: linear-gradient(90deg, rgba(255, 0, 194, 1) 0%, rgba(255, 0, 0, 1) 100%);
+}
+
+a.close {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+aside header h3 {
+  font-size: 40px;
+}
+
 /*
 * --------------------------------------------------
 * Product 
