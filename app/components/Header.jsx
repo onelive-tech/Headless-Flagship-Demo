@@ -15,11 +15,11 @@ export function Header({header, isLoggedIn, cart}) {
         <div className='overflow-hidden'>
         <TextTicker />
         </div>
-        <div className='inner-header items-center px-2 flex'>
+        <div className='inner-header items-center px-4 flex'>
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-          <strong>
+          <strong class="">
             <img
-              className='max-h-12'
+              className='logo max-h-12'
               src={Logo}
               alt={shop.name}
               // width="20%"
@@ -31,7 +31,6 @@ export function Header({header, isLoggedIn, cart}) {
                 objectPosition: 'center',
               }}
             />          
-            
           </strong>
         </NavLink>
         <HeaderMenu
@@ -89,7 +88,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             : item.url;
         return (
           <NavLink
-            className="nav-item inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            className="nav-item inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium "
             end
             key={item.id}
             onClick={closeAside}
@@ -112,9 +111,9 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
  */
 function HeaderCtas({isLoggedIn, cart}) {
   return (
-    <nav className="header-ctas" role="navigation">
-      <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+    <nav className="header-ctas font-medium" role="navigation">
+      {/* <HeaderMenuMobileToggle /> */}
+      <NavLink prefetch="intent" to="/account/login" style={activeLinkStyle}>
         <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
             {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
@@ -123,6 +122,7 @@ function HeaderCtas({isLoggedIn, cart}) {
       </NavLink>
       <SearchToggle />
       <CartToggle cart={cart} />
+      <HeaderMenuMobileToggle />
     </nav>
   );
 }
@@ -130,7 +130,7 @@ function HeaderCtas({isLoggedIn, cart}) {
 function HeaderMenuMobileToggle() {
   return (
     <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
+      <h3 className="text-2xl	font-medium	">☰</h3>
     </a>
   );
 }

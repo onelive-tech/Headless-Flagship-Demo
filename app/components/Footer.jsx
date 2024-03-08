@@ -38,7 +38,7 @@ export default function FooterLayout() {
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                <a key={item.name} href={item.href} className="text-white hover:text-gray-400">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
@@ -48,7 +48,19 @@ export default function FooterLayout() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+              <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+              <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
@@ -59,24 +71,12 @@ export default function FooterLayout() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+              <h3 className="text-sm font-semibold leading-6 text-white">Specialty Services</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
+                  {navigation.services.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.name}
@@ -207,28 +207,31 @@ function activeLinkStyle({isActive, isPending}) {
 
 const navigation = {
   solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+    { name: 'Ecommerce Solutions', href: 'https://www.onelive.com/ecommerce' },
+    { name: 'Multi-Store Ecommerce', href: 'https://www.onelive.com/ecommerce/multi-store-ecommerce' },
+    { name: 'Fulfillment Services', href: 'https://www.onelive.com/fulfillment-services' },
+    { name: 'Ecommerce Website Development', href: 'https://www.onelive.com/ecommerce/website-development' },
+    { name: 'Shopify Partner', href: 'https://www.onelive.com/shopify-partner' },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Blog', href: '/blogs/news' },
+    { name: 'About', href: 'https://www.onelive.com/about' },
+    { name: 'Resource Center', href: 'https://www.onelive.com/shopify-partner' },
+    { name: 'Technology Partners', href: 'https://www.onelive.com/technology-partners' },
+    { name: 'Support', href: 'https://www.onelive.com/support' },
+    { name: 'Contact', href: 'https://www.onelive.com/contact' },
+  ],
+  services: [
+    { name: 'VIP Services', href: 'https://www.onelive.com/services/vip-services' },
+    { name: 'Fan Club Platform', href: 'https://www.onelive.com/services/fan-club' },
+    { name: 'Event Ticketing Software', href: 'https://www.onelive.com/services/event-ticketing-software' },
   ],
   legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Accessibility', href: 'https://www.onelive.com/accessibility-statement' },
+    { name: 'Privacy', href: 'https://www.onelive.com/privacy' },
+    { name: 'Terms', href: 'https://www.onelive.com/terms' },
+    { name: 'Cookies', href: 'https://www.onelive.com/cookies' },
+
   ],
   social: [
     {
@@ -263,6 +266,14 @@ const navigation = {
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Linkedin',
+      href: 'https://www.linkedin.com/company/one-live',
+      icon: (props) => (
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
       ),
     },
