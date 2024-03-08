@@ -87,7 +87,7 @@ function CartLineItem({layout, line}) {
       </div>
       <div className='w-3/4'>
         <div className='flex gap-4'>
-          <div className='w-80'>
+          <div className='w-80 px-4'>
             <Link
 
               prefetch="intent"
@@ -103,11 +103,11 @@ function CartLineItem({layout, line}) {
                 <strong className='text-sm'>{product.title}</strong>
               </p>
             </Link>
-            <CartLinePrice className='text-xs font-bold' line={line} as="span" />
+            <CartLinePrice className='text-sm font-bold' line={line} as="span" />
               <ul>
                 {selectedOptions.map((option) => (
                   <li key={option.name}>
-                    <small className='text-xs'>
+                    <small className='text-sm'>
                       {option.name}: {option.value}
                     </small>
                   </li>
@@ -129,10 +129,9 @@ function CartCheckoutActions({checkoutUrl}) {
 
   return (
     <div>
-      <a href={checkoutUrl} className='btn-default overflow-hidden relative w-full bg-black text-white my-6 py-2 px-4 rounded-xl font-bold uppercase transition-all duration-100 -- hover:shadow-md border border-black hover:bg-gradient-to-t hover:from-gray-900 before:to-grey-900 hover:no-underline  hover:-translate-y-[3px]' target="_self">
+      <a href={checkoutUrl} className='btn-default overflow-hidden relative w-full bg-black text-white my-6 py-2 px-20 rounded-xl font-bold uppercase border-black transition-all duration-100 -- hover:shadow-md border hover:no-underline  hover:-translate-y-[3px]' target="_self">
         Continue to Checkout
       </a>
-      <br />
     </div>
   );
 }
@@ -150,8 +149,22 @@ export function CartSummary({cost, layout, children = null}) {
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
-      <h4>Totals</h4>
-      <dl className="cart-subtotal mb-3">
+      <div class="totals">
+        <dl className="cart-subtotal my-3">
+        <h4>Estimated total</h4>
+
+        <dd class="text-md font-medium	estimated-price">
+          {cost?.subtotalAmount?.amount ? (
+            <Money data={cost?.subtotalAmount} />
+          ) : (
+            '-'
+          )}
+        </dd>
+      </dl>
+      </div>
+    
+      <p className="pb-4"> Taxes, discounts and shipping calculated at checkout </p>
+      {/* <dl className="cart-subtotal mb-3">
         <dt>Subtotal</dt>
         <dd>
           {cost?.subtotalAmount?.amount ? (
@@ -160,7 +173,7 @@ export function CartSummary({cost, layout, children = null}) {
             '-'
           )}
         </dd>
-      </dl>
+      </dl> */}
       {children}
     </div>
   );
@@ -177,9 +190,13 @@ function CartLineRemoveButton({lineIds}) {
       inputs={{lineIds}}
     >
       <button type="submit">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M14 10V17M10 10V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+      </svg>
+
+        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm2.78-4.22a.75.75 0 0 1-1.06 0L8 9.06l-1.72 1.72a.75.75 0 1 1-1.06-1.06L6.94 8 5.22 6.28a.75.75 0 0 1 1.06-1.06L8 6.94l1.72-1.72a.75.75 0 1 1 1.06 1.06L9.06 8l1.72 1.72a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
-        </svg>
+        </svg> */}
       </button>
     </CartForm>
   );
@@ -195,9 +212,9 @@ function CartLineQuantity({line}) {
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="cart-line-quantiy w-40">
+    <div className="cart-line-quantity w-40">
         <div className='flex items-center gap-1'>
-        <div className='border flex border-blackp-1 items-center gap-3 p-1'> 
+        <div className='border flex border-black p-1 items-center gap-5 p-2 mr-2'> 
         <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
           <button
             aria-label="Decrease quantity"
@@ -206,8 +223,16 @@ function CartLineQuantity({line}) {
             value={prevQuantity}
           >
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
                 <path fill-rule="evenodd" d="M8 2a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.22 3.22V2.75A.75.75 0 0 1 8 2Z" clip-rule="evenodd" />
+              </svg> */}
+              <svg class="w-2 h-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                </g>
+                  <g id="SVGRepo_iconCarrier"> 
+                  <path d="M6 12L18 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                  </g>
               </svg>
             </span>
           </button>
@@ -225,8 +250,12 @@ function CartLineQuantity({line}) {
             value={nextQuantity}
           >
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
                 <path fill-rule="evenodd" d="M8 14a.75.75 0 0 0 .75-.75V4.56l1.22 1.22a.75.75 0 1 0 1.06-1.06l-2.5-2.5a.75.75 0 0 0-1.06 0l-2.5 2.5a.75.75 0 0 0 1.06 1.06l1.22-1.22v8.69c0 .414.336.75.75.75Z" clip-rule="evenodd" />
+              </svg> */}
+              <svg class="w-2 h-2" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.402 45.402" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141 c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27 c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435 c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z">
+                </path> 
+                </g></g>
               </svg>
             </span>
           </button>
@@ -277,13 +306,13 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
         Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
         started!
       </p> */}
-      <h3 className="text-4xl text-center	">
+      <h3 className="text-4xl text-center">
         YOUR CART IS EMPTY
       </h3>
-      <div className = "text-center	">
+      <div className = "text-center">
         <button 
           type="button" 
-          class="btn rounded-full bg-indigo-600 px-3.5 mt-2 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          class="btn rounded-full bg-black px-3.5 mt-2 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 <Link
           to="/collections"
           onClick={() => {
@@ -327,14 +356,15 @@ function CartDiscounts({discountCodes}) {
         </div>
       </dl>
 
+{/* Billy commented out this discount code to reflect the same as dawn, discount is on the checkout page */}
       {/* Show an input to apply a discount */}
-      <UpdateDiscountForm discountCodes={codes}>
+      {/* <UpdateDiscountForm discountCodes={codes}>
         <div className='relative flex items-center mb-4'>
           <input className='peer relative h-10 w-full rounded-md bg-gray-50 pl-4 pr-20 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:drop-shadow-lg' type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
           <button className='absolute right-0 h-10 w-16 rounded-r-md bg-black text-xs font-semibold text-white transition-all duration-200 ease-in-out group-focus-within:bg-blue-400 group-focus-within:hover:bg-white' type="submit">Apply</button>
         </div>
-      </UpdateDiscountForm>
+      </UpdateDiscountForm> */}
     </div>
   );
 }

@@ -42,75 +42,6 @@
 
 /*
 * --------------------------------------------------
-* Common
-* --------------------------------------------------
-*/
-body {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
- h1, h2, h3, h4, h5, h6,.cart-line p strong {
-  font-family: 'Bebas';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* 
-* --------------------------------------------------
-* Header
-* --------------------------------------------------
-*/
-
-.nav-item{
-  text-transform: uppercase;
-  font-family: 'Bebas';
-  font-weight: normal;
-  font-style: normal;
-  font-size:18px;
-}
-.nav-item:hover {
-  color: #fff;
-}
-
-.btn {
-  background: linear-gradient(90deg, rgba(255, 0, 194, 1) 0%, rgba(255, 0, 0, 1) 100%);
-}
-
-a.close {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-aside header h3 {
-  font-size: 40px;
-}
-
-/*
-* --------------------------------------------------
-* Product 
-* --------------------------------------------------
-*/
-.product-options-item.active {
-  background: #000;
-  color:#fff;
-}
-
-/*
-* --------------------------------------------------
-* components/Aside
-* --------------------------------------------------
-*/
-
-.h-65vh {
-  height: 65vh;
-}
-
-
-/*
-* --------------------------------------------------
 * Text Ticker
 * --------------------------------------------------
 */
@@ -176,4 +107,85 @@ aside header h3 {
   padding: 0 0.5rem;
   font-size: 1rem;
   color: white;   
+}
+
+/* 
+* --------------------------------------------------
+* Header
+* --------------------------------------------------
+*/
+
+.nav-item{
+  text-transform: uppercase;
+  font-family: 'Bebas';
+  font-weight: normal;
+  font-style: normal;
+  font-size:18px;
+}
+.nav-item:hover {
+  color: #fff;
+}
+
+a.close {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+aside header h3 {
+  font-size: 40px;
+}
+
+/*
+* --------------------------------------------------
+* Common
+* --------------------------------------------------
+*/
+body {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+ h1, h2, h3, h4, h5, h6,.cart-line p strong {
+  font-family: 'Bebas';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/*
+* --------------------------------------------------
+* Product 
+* --------------------------------------------------
+*/
+.product-options-item.active {
+  background: #000;
+  color:#fff;
+}
+
+/*
+* --------------------------------------------------
+* components/Aside
+* --------------------------------------------------
+*/
+
+.h-65vh {
+  height: 65vh;
+}
+
+/*
+* --------------------------------------------------
+* Cart
+* --------------------------------------------------
+*/
+
+dd.estimated-price{
+  text-align:right;
+}
+
+a.cart-btn {
+  transform: translateY(50%);
+
 }
