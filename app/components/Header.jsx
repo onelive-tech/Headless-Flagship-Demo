@@ -63,7 +63,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
 
   return (
     <div className='relative flex h-16 justify-between'>
-    <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
+    <div className='flex flex-1 md:items-center justify-end	md:justify-center sm:items-stretch '>
     <nav className=" sm:ml-6 sm:flex sm:space-x-8 navigation" role="navigation">
       {viewport === 'mobile' && (
         <NavLink
@@ -87,7 +87,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             : item.url;
         return (
           <NavLink
-            className="nav-item inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium "
+            className="nav-item block md:inline-flex items-center border-b-2 border-transparent py-4 md:py-0 md:px-1 pt-1 text-xl md:text-lg font-medium text-right	"
             end
             key={item.id}
             onClick={closeAside}

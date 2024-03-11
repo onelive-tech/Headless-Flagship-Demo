@@ -116,14 +116,11 @@
 */
 
 
-
-
 .nav-item{
   text-transform: uppercase;
   font-family: 'Bebas';
   font-weight: normal;
   font-style: normal;
-  font-size:18px;
 }
 .nav-item:hover {
   color: #fff;
