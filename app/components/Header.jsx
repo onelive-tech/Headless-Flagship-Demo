@@ -64,7 +64,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
   return (
     <div className='relative flex h-16 justify-between'>
     <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
-    <nav className="hidden sm:ml-6 sm:flex sm:space-x-8 navigation" role="navigation">
+    <nav className=" sm:ml-6 sm:flex sm:space-x-8 navigation" role="navigation">
       {viewport === 'mobile' && (
         <NavLink
           end
@@ -73,7 +73,6 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           style={activeLinkStyle}
           to="/"
         >
-          Home
         </NavLink>
       )}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {

@@ -115,6 +115,9 @@
 * --------------------------------------------------
 */
 
+
+
+
 .nav-item{
   text-transform: uppercase;
   font-family: 'Bebas';
@@ -133,6 +136,12 @@ a.close {
 
 aside header h3 {
   font-size: 40px;
+}
+
+@media (max-width: 767px) {
+  .inner-header nav:first-child  {
+    display: none;
+    }
 }
 
 /*
