@@ -1,5 +1,23 @@
 /*
 * --------------------------------------------------
+* Common
+* --------------------------------------------------
+*/
+body {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+ h1, h2, h3, h4, h5, h6,.cart-line p strong {
+  font-family: 'Bebas';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+* --------------------------------------------------
 * Fonts
 * --------------------------------------------------
 */
@@ -140,26 +158,6 @@ aside header h3 {
     display: none;
     }
 }
-
-/*
-* --------------------------------------------------
-* Common
-* --------------------------------------------------
-*/
-body {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
- h1, h2, h3, h4, h5, h6,.cart-line p strong {
-  font-family: 'Bebas';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-
 
 /*
 * --------------------------------------------------
