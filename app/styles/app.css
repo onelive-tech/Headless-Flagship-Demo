@@ -8,7 +8,7 @@
   --color-light: #fff;
 }
 
-img {
+img:not(.jersey-img) {
   border-radius: 4px;
 }
 
@@ -252,7 +252,6 @@ aside li {
   align-items: center;
   display: flex;
   justify-content: space-between;
-
 }
 /*
 * --------------------------------------------------
