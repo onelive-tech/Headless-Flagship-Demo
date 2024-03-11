@@ -218,8 +218,9 @@ aside li {
   padding: 0.75rem 0;
 }
 
+/* height below set to auto b/c at 100% the image gets distorted when a product has more lines of text on the title or description  */
 .cart-line img {
-  height: 100%;
+  height: auto;  
   display: block;
   margin-right: 0.75rem;
 }
@@ -237,7 +238,7 @@ aside li {
   width: calc(var(--aside-width) - 40px);
 }
 
-.cart-line-quantiy {
+.cart-line-quantity {
   display: flex;
 }
 
@@ -250,6 +251,8 @@ aside li {
 .cart-subtotal {
   align-items: center;
   display: flex;
+  justify-content: space-between;
+
 }
 /*
 * --------------------------------------------------
