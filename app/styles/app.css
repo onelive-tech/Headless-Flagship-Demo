@@ -8,10 +8,6 @@
   --color-light: #fff;
 }
 
-img {
-  border-radius: 4px;
-}
-
 /*
 * --------------------------------------------------
 * components/Aside
@@ -252,7 +248,6 @@ aside li {
   align-items: center;
   display: flex;
   justify-content: space-between;
-
 }
 /*
 * --------------------------------------------------

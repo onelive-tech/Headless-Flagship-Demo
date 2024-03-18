@@ -11,7 +11,7 @@ function HeroVideo() {
                 </video>
                 <div className="absolute inset-0 text-white bg-black bg-opacity-50 p-8">
 
-                    <div className='absolute bottom-3 mb-2.5'>
+                    <div className='absolute bottom-3 mb-8 px-2'>
                         <h2 className="text-3xl font-bold sm:text-5xl">
                             Dare to go headless!
                         </h2>

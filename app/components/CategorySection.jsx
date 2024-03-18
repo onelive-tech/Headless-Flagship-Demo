@@ -74,10 +74,12 @@ function CategorySection() {
             </div>
 
             <div className="mt-6 px-4 sm:hidden">
-                <a href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                    Browse all categories
-                    <span aria-hidden="true"> &rarr;</span>
-                </a>
+            <button class="btn block bg-black rounded-full px-12 py-3 text-sm font-semibold">
+    <a href="#" class="text-white">
+        Browse all categories
+        <span aria-hidden="true"> &rarr;</span>
+    </a>
+</button>
             </div>
         </section>
     </div>
